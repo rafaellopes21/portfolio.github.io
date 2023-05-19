@@ -1,1 +1,576 @@
-dasdasd
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CV Digital Rafael</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="dependencies/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="dependencies/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="dependencies/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="dependencies/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="dependencies/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dependencies/css/style.css" rel="stylesheet">
+    <style>
+        .ajuda-rapida {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .ajuda-rapida {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Carregando...</span>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row g-5">
+        <div class="col-lg-4 sticky-lg-top vh-100">
+            <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
+                <img class="w-100 img-fluid mb-4" style="border-radius: 50%;"
+                     src="dependencies/img/profile.jpg" alt="Image">
+                <h1 class="text-primary mt-2">Rafael L. Silva</h1>
+                <div class="mb-4" style="height: 22px;">
+                    <h4 class="typed-text-output d-inline-block text-light"></h4>
+                    <div class="typed-text d-none">Desenvolvedor Sênior, Desenvolvedor Full Stack, Desenvolvedor PHP,
+                        Veja mais sobre mim
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-auto mb-3">
+                    <a class="btn btn-outline-info" href="#"><i class="fab fa-linkedin-in"></i> Ver LinkedIn</a>
+                </div>
+                <div class="d-flex bg-primary align-items-end justify-content-between border-top">
+                    <a href="https://drive.google.com/uc?export=download&id=1x9HU1vcMFvdMTp7k24_4TzjOjrM3UlGV"
+                       download="https://drive.google.com/uc?export=download&id=1x9HU1vcMFvdMTp7k24_4TzjOjrM3UlGV"
+                       class="btn" style="margin: 0 auto;">Baixar Currículo</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="title pb-3 mb-5">Sobre Mim</h1>
+                <p>Sou desenvolvedor Full Stack PHP e apaixonado por tecnologia.
+                    Possuo facilidade em aprender, me comunicar, trabalhar em equipe,
+                    fornecer suporte ao cliente, programar e desenvolver softwares e sistemas,
+                    analisar e resolver problemas e sou curioso em adquirir novos conhecimentos.</p>
+                <div class="row mb-4">
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">Nome:</span> <span id="nome"></span>
+                    </div>
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">Idade: </span><span id="idade"></span>
+                    </div>
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">Nível: </span><span id="nivel"></span>
+                    </div>
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">Experiência: </span><span id="experiencia">0</span> Anos
+                    </div>
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">Telefone: </span><span id="telefone"></span>
+                    </div>
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">Email: </span><span id="email"></span>
+                    </div>
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">LinkedIn:</span>
+                        <a href='https://www.linkedin.com/in/rafael-lopes-8a146862'
+                           target='_blank' style='color: #eeeeee;border-bottom: 2px solid #00b87b;'>Visualizar
+                            Perfil</a>
+                    </div>
+                    <div class="col-sm-6 py-1">
+                        <span class="fw-medium text-primary">Freelance: </span><span id="freelance"></span>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <div class="d-flex bg-secondary p-4">
+                            <h1 class="flex-shrink-0 display-5 text-primary mb-0"
+                                data-toggle="counter-up" id="anosExperiencia"></h1>
+                            <div class="ps-3">
+                                <p class="mb-0">Anos de</p>
+                                <h5 class="mb-0">Experiência</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <div class="d-flex bg-secondary p-4">
+                            <h1 class="flex-shrink-0 display-5 text-primary mb-0"
+                                data-toggle="counter-up" id="projetosRealizados"></h1>
+                            <div class="ps-3">
+                                <p class="mb-0">Projetos</p>
+                                <h5 class="mb-0">Realizados</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4">
+                        <div class="d-flex bg-secondary p-4">
+                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up"
+                                style="color: #ffffff00 !important;">&nbsp;</h1>
+                            <div class="ps-3">
+                                <p class="mb-0"><b>Trabalhando em</b></p>
+                                <h5 class="mb-0" style="color: #00b87b;font-size: 22px;" id="trabalhandoEm"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="title pb-3 mb-5">Skills</h1>
+                <div class="row" id="my-skills"></div>
+            </section>
+
+            <section class="py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="title pb-3 mb-5">Experiências</h1>
+                <div class="border-start border-2 border-light pt-2 ps-5">
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <span class="badge badge-success"
+                              style="font-size: 14px;color: #fff;background-color: #00b87b;display: inline-block;padding: 0.25em 0.4em;font-weight: 700;line-height: 1;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: 0.25rem;">Trabalhando atualmente</span>
+                        <h5 class="mb-1">Desenvolvedor Full Stack - PHP</h5>
+                        <p class="mb-2">Microton | <small>2019 - {{ "now" | date("Y") }}</small></p>
+                        <p>
+                            Desenvolvimento e análise de sistemas web utilizando tecnologias e frameworks de back-end e
+                            front-end, bem como utilização de bancos de dados, criação de APIs e Webservices, planejamento,
+                            estruturação de projetos e desenvolvimento de softwares; além de realizar reuniões para entendimento
+                            com o cliente e reuniões para
+                            resolução de problemas, auxílios e ajuda à outros desenvolvedores, testes unitários no momento
+                            do desenvolvimento, análise de informações no banco de dados. Além dos projetos comuns de
+                            desenvolvimento,
+                            também foi criado projetos que utilizavam mapas, geolocalização, cartografias e análise de dados
+                            para
+                            montagem de dashboards e gráficos.
+                        </p>
+                    </div>
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <h5 class="mb-1">Analista de negócios</h5>
+                        <p class="mb-2">Mexichem Brasil | <small>2016 - 2019</small></p>
+                        <p>
+                            Analisar e desenvolver melhorias de acordo com as necessidades dos usuários além,
+                            de realizar consultas via banco de dados, análise de códigos fonte, criação de lógicas
+                            e regras para desenvolvimentos de programas e relatórios SAP, participando de projetos,
+                            reuniões internacionais, testes integrados, contato com consultorias, entendimento dos
+                            processos realizados pelas áreas e usuários, dentre outras atividades voltadas
+                            a área de análise e desenvolvimento.
+                        </p>
+                    </div>
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <h5 class="mb-1">Funcionário de suporte de TI</h5>
+                        <p class="mb-2">Tribunal Regional Federal da 4ª Região | <small>2015 - 2016</small></p>
+                        <p>
+                            Estágio para Suporte de TI, na qual fornecia suporte aos usuários e realizava conserto de
+                            computadores,
+                            instalação de equipamentos e softwares do TRE (Tribunal Regional Eleitoral). Também configurava
+                            máquinas
+                            de fotografia, aparelhos de impressão e captação de digitais e impressoras.
+                        </p>
+                    </div>
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <h5 class="mb-1">Menor Aprendiz - Metalúrgico</h5>
+                        <p class="mb-2">Granaço Fundição | <small>2014</small></p>
+                        <p>
+                            Menor aprendiz como Metrologista e laboratorista metalúrgico, além de realizar atualizações em
+                            planilhas de
+                            controle, medições de peças, dentre outras atividades pertinentes as funções que me foram
+                            atribuídas.
+                        </p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h1 class="title pb-3 mb-5">Freelancers</h1>
+                <div class="border-start border-2 border-light pt-2 ps-5">
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <h5 class="mb-1">Desenvolvedor Full Stack</h5>
+                        <p class="mb-2">DogTagClan | <small>2018 - {{ "now" | date("Y") }}</small></p>
+                        <p>
+                            Desenvolvi todo o e-commerce e sistema interno de controle da
+                            <a href="https://www.dogtagclan.com.br/" target="_blank"><b>DogTagClan</b></a>, a qual
+                            ainda hoje, presto suporte à empresa. Foi necessário análise e levantamento de requisitos
+                            com a empresa para que fosse possível entender a necessidade e desenvolver o projeto.<br>
+                            Além do desenvolvimento fiz toda a implantação e publicação na internet, desde a configuração
+                            do servidor e hospedagem até o deploy final, bem como utilização de APIs para cálculos e validações
+                            de CEPs,
+                            recebimento de pagamentos via PIX, Boleto e Cartão, envios de e-mails aos clientes, Google Analytics
+                            para análise de dados de tráfego, SEO e Sitemap, criação do banco de dados, painel administrativo
+                            juntamente com dashboards, responsividade e outras funcionalidades internas de controle. Fora isso,
+                            também fiz
+                            todas as artes gráficas, banners, template de produtos, template de email, design, layout das
+                            páginas e mais...
+                        </p>
+                    </div>
+
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <h5 class="mb-1">Desenvolvedor Wordpress</h5>
+                        <p class="mb-2">TikiGames | <small>2022</small></p>
+                        <p>
+                            Foi criado uma solução para a empresa
+                            <a href="https://www.tikigames.com.br/" target="_blank"><b>TikiGames</b></a>,
+                            publicar posts em blogs e ter no mesmo site um espaço para vendas de seus produtos. Também fiz
+                            toda configuração necessária no Wordpress para o funcionamento correto com a instalação de plugins e
+                            módulos para que a empresa pudesse inserir e trabalhar sem a necessidade de conhecimento técnico em
+                            códigos.
+                        </p>
+                    </div>
+
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <h5 class="mb-1">Desenvolvedor Wordpress</h5>
+                        <p class="mb-2">Nissomar | <small>2021</small></p>
+                        <p>
+                            Construído todo o site para divulgação da empresa
+                            <a href="http://nissomar.com/" target="_blank"><b>Nissomar</b></a> atráves do Wordpress para
+                            que pudessem exibir seus produtos e alcançar mais clientes atráves da internet. Inseri também
+                            plugins e módulos para que a empresa pudesse inserir e trabalhar sem a necessidade de conhecimento
+                            técnico em códigos bem como atualização da versão do PHP do servidor no cliente.
+                        </p>
+                    </div>
+
+                    <div class="position-relative mb-4">
+                        <span class="bi bi-arrow-right fs-4 text-light position-absolute"
+                              style="top: -5px; left: -50px;"></span>
+                        <h5 class="mb-1">Desenvolvedor de Sites</h5>
+                        <p class="mb-2">Outros clientes | <small>2018 - 2021</small></p>
+                        <p>
+                            Fiz alguns sites para pequenas e micro empresas que tinha o objetivo de apenas listar e exibir
+                            seu negócio na internet para publicar nas redes sociais, são elas:
+                            <b>Khaloka, Excellence Montagens, Pão da Vida, PDK</b> e outros...
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-secondary text-center p-3">
+                    <h1 class="text-white font-weight-bold">Idiomas</h1>
+                    <div class="position-relative w-100 table-responsive" style="text-align: left">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Idioma</th>
+                                <th scope="col">Comunição</th>
+                                <th scope="col">Leitura</th>
+                                <th scope="col">Escrita</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">Português Brasileiro</th>
+                                <td>Nativo</td>
+                                <td>Nativo</td>
+                                <td>Nativo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Inglês</th>
+                                <td>Intermediário</td>
+                                <td>Avançado</td>
+                                <td>Intermediário</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ajuda-rapida alert alert-info" style="padding: 0 5px 0 5px" role="alert">
+                        Arraste a tabela à <a class="alert-link">esquerda</a>.
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="title pb-3 mb-5">Conhecimentos</h1>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fa fa-2x fa-laptop-code mx-auto mb-4"></i>
+                            <h5 class="mb-2">Linguagens</h5>
+                            <p class="mb-0">PHP, JavaScript, HTML, CSS, C++</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fa fa-2x fa-database mx-auto mb-4"></i>
+                            <h5 class="mb-2">Banco de Dados</h5>
+                            <p class="mb-0">MySQL, Postgres, Oracle, SQL Server</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fa fa-2x fa-link mx-auto mb-4"></i>
+                            <h5 class="mb-2">Frameworks e APIs</h5>
+                            <p class="mb-0">Laravel, Slim, Doctrine, Eloquent, PHPUnit
+                                ChartJs, OpenLayers, Composer, Opencart, Wordpress,
+                                APIs de pagamento e rastreamento por CEP e muitas outras...</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fa fa-2x fa-plus mx-auto mb-4"></i>
+                            <h5 class="mb-2">Diferencial</h5>
+                            <p class="mb-0">
+                                Photoshop, Sony Vegas, SAP, Softway, OpenLayers,
+                                Kodular, aplicações utilizando PWA e possuo meu próprio
+                                site (<a href="https://www.ampliesolucoes.com.br/" target="_blank"><b>Amplie Soluções</b></a>)
+                                para realizações de freelancers - <a href="https://www.ampliesolucoes.com.br/"
+                                                                     target="_blank"><b>Ver Site</b></a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="title pb-3 mb-5">Educação e Certificados</h1>
+                <p>
+                    Sou formado pela Universidade da Região de Joinville UNIVILLE / SC como Bacharel em Sistemas de Informação
+                </p>
+                <div class="bg-secondary p-1">
+                    <h3 class="text-primary font-weight-bold">Educação</h3>
+                    <div class="position-relative w-100 table-responsive" style="text-align: left">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Grau</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">Educação Básica</th>
+                                <td>Ensino Médio</td>
+                                <td>Completo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Ensino Superior</th>
+                                <td>Bacharel em Sistemas de Informação</td>
+                                <td>Completo</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-secondary p-1">
+                    <h3 class="text-primary font-weight-bold">Certificados</h3>
+                    <div class="position-relative w-100 table-responsive" style="text-align: left">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Curso</th>
+                                <th scope="col">Instituição</th>
+                                <th scope="col">Status</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">Certificado Microsoft 70-480</th>
+                                <td>Microsoft</td>
+                                <td>Completo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Desenvolvimento WEB</th>
+                                <td>Udemy</td>
+                                <td>Completo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Certificado de introdução ao JAVA</th>
+                                <td>Udemy</td>
+                                <td>Completo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Certificado de Inglês</th>
+                                <td>OK Idiomas</td>
+                                <td>Completo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Certificado de Código de Ética</th>
+                                <td>SENAI</td>
+                                <td>Completo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Segurança do Trabalho</th>
+                                <td>SENAI</td>
+                                <td>Completo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Qualidade em Metalurgia</th>
+                                <td>SENAI</td>
+                                <td>Completo</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="title pb-3 mb-5">Meus Projetos</h1>
+                <p>Apresento a seguir alguns dos projetos que desenvolvi em freelances ou projetos pessoais.<br>
+                    <small>(Projetos de empresas em que trabalho/trabalhei <b>(principalmente sistemas)</b> não serão exibidas
+                        por questões de integridade e confidencialidade)</small></p>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 text-center mb-2">
+                                <ul class="list-inline mb-4" id="portfolio-flters">
+                                    <li class="btn btn-secondary active" data-filter="*"><i class="fa fa-star me-2"></i>Tudo
+                                    </li>
+                                    <li class="btn btn-secondary" data-filter=".first"><i class="fa fa-laptop-code me-2"></i>Sistemas
+                                    </li>
+                                    <li class="btn btn-secondary" data-filter=".second"><i class="fa fa-globe me-2"></i>Sites &
+                                        E-commerces
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row portfolio-container">
+                            <div class="col-md-6 mb-4 portfolio-item first">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/ampliesolucoes.png"
+                                         style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>Amplie Soluções</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/dogtagclan.png" style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>DogTagClan</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/prluizlopez.png" style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>PrLuizLopez</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item first">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/cogesi.png" style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>Cogesi</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/piratas.png" style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>PDK</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/khaloka-site-art.jpg"
+                                         style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>Khaloka</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/pao-da-vida-site.jpg"
+                                         style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>Pão da Vida</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/excellence-montagens-site.jpg"
+                                         style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>Excellence Montagens</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/lia-bela-art-site.jpg"
+                                         style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>LiaBelaArt</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 portfolio-item second">
+                                <div class="position-relative overflow-hidden mb-2">
+                                    <img class="img-fluid w-100" src="dependencies/img/nissomar.png" style="opacity: 0.9;">
+                                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                        <b>Nissomar</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
+                <h1 class="title pb-3 mb-5">Entre em Contato</h1>
+                <p class="mb-4">Você pode entrar em contato comigo através do meu LinkedIn clicando no botão a seguir
+                    <b>Entrar em Contato</b>!</p>
+                <div class="col-12">
+                    <a class="btn btn-primary w-100 py-3" href="https://www.linkedin.com/in/rafael-lopes-8a146862"
+                       target="_blank">Entrar em Contato</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="dependencies/lib/wow/wow.min.js"></script>
+<script src="dependencies/lib/typed/typed.min.js"></script>
+<script src="dependencies/lib/easing/easing.min.js"></script>
+<script src="dependencies/lib/waypoints/waypoints.min.js"></script>
+<script src="dependencies/lib/counterup/counterup.min.js"></script>
+<script src="dependencies/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="dependencies/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="dependencies/lib/lightbox/js/lightbox.min.js"></script>
+<script src="dependencies/js/main.js"></script>
+<script src="dependencies/js/my-settings.js"></script>
+</body>
+</html>
