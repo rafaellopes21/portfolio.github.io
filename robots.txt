@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: *
+
+Sitemap: https://rafaellopes21.github.io/portfolio.github.io/sitemap.xml
