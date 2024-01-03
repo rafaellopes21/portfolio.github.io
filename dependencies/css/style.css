@@ -276,3 +276,21 @@
     margin-left: 23px;
   }
 }
+
+.show-langs-desktop{
+  display: block;
+}
+.show-langs-mobile{
+  display: none;
+}
+@media (max-width: 767px) {
+  .show-langs-desktop{
+    display: none;
+  }
+  .show-langs-mobile{
+    display: block;
+  }
+  .show-langs-mobile > img.btn-img{
+    max-width: 70px;
+  }
+}
