@@ -257,7 +257,7 @@
   position: relative;
   top: -4px;
   border-radius: 50px;
-  height: 80%;
+  height: 50px;
   object-fit: cover;
   object-position: 50%;
   transform: scale(0.8) translate(0, 8%);
