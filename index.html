@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>CV Digital Rafael</title>
+    <title translate="title_resume_page">CV Digital | Rafael</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="dependencies/img/favicon.ico" rel="icon">
 
@@ -31,73 +31,114 @@
 </head>
 
 <body>
-<div id="spinner"
-     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-        <span class="sr-only">Carregando...</span>
+<div class="modal fade" id="langModal" tabindex="-1" role="dialog" aria-labelledby="langModalLabel"
+     aria-hidden="true" style="z-index: 999999">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-lang">
+            <div class="modal-body">
+                <div class="text-center">
+                    <h2 class="mb-0">Choose a Language</h2>
+                    <h5 class="mb-0" style="font-style: italic;">Escolha um Idioma</h5>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-6 text-center p-0">
+                        <p class="mb-2">English</p>
+                        <button id="btn-lang-en" type="button" data-dismiss="modal" class="btn btn-lang" onclick="setLanguage('en')">
+                            <img src="dependencies/img/usa.jpg" alt="English" class="img-fluid">
+                        </button>
+                    </div>
+                    <div class="col-6 text-center p-0">
+                        <p class="mb-2">Português</p>
+                        <button id="btn-lang-pt" type="button" data-dismiss="modal" class="btn btn-lang" onclick="setLanguage('pt')">
+                            <img src="dependencies/img/br.jpg" alt="Brazilian" class="img-fluid">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="container">
+<div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" style="background: #ffffff14">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>
+</div>
+
+<div class="main-content-portfolio container blur-content">
     <div class="row g-5">
         <div class="col-lg-4 sticky-lg-top vh-100">
             <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
-                <img class="w-100 img-fluid mb-4" style="border-radius: 50%;"
-                     src="dependencies/img/profile-2.jpg" alt="Image">
+                <img class="w-100 img-fluid mb-4 mt-2" style="border-radius: 50%;" src="dependencies/img/profile-2.jpg" alt="Profile">
                 <h1 class="text-primary mt-2">Rafael L. Silva</h1>
                 <div class="mb-4" style="height: 22px;">
                     <h4 class="typed-text-output d-inline-block text-light"></h4>
-                    <div class="typed-text d-none">Desenvolvedor Sênior, Desenvolvedor Full Stack, Desenvolvedor PHP,
-                        Veja mais sobre mim
+                    <div class="typed-text d-none" translate="brief_data">Desenvolvedor Sênior, Desenvolvedor Full Stack, Desenvolvedor PHP, Veja mais sobre mim
                     </div>
                 </div>
-                <div class="d-flex justify-content-center mt-auto mb-3">
-                    <a class="btn btn-outline-info" href="https://www.linkedin.com/in/rafael-lopes-8a146862/"
-                        target="_blank">
-                        <i class="fab fa-linkedin-in"></i> Ver LinkedIn
-                    </a>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-center mt-auto col-12">
+                        <a class="btn btn-outline-info" href="https://www.linkedin.com/in/rafael-lopes-8a146862/"
+                           target="_blank">
+                            <i class="fab fa-linkedin-in"></i> <span translate="linkedin_link">Ver LinkedIn</span>
+                        </a>
+                        <div style="background: white;width: 2px;height: 1.6rem;margin: 0 10px;position: relative;top: 7px;"></div>
+                        <div class="text-center p-0" style="position: relative;top: -5px;">
+                            <p class="m-0 p-0" style="font-size: 11px;">Language / <span style="font-style: italic;">Idioma</span></p>
+                            <img src="dependencies/img/usa.jpg" alt="English" class="img-fluid btn-img" onclick="forceChangeLanguage('en')">
+                            <img src="dependencies/img/br.jpg" alt="Brazilian" class="img-fluid btn-img" onclick="forceChangeLanguage('pt')">
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex bg-primary align-items-end justify-content-between border-top">
-                    <a href="https://drive.google.com/uc?export=download&id=1x9HU1vcMFvdMTp7k24_4TzjOjrM3UlGV"
-                       download="https://drive.google.com/uc?export=download&id=1x9HU1vcMFvdMTp7k24_4TzjOjrM3UlGV"
-                       class="btn" style="margin: 0 auto;">Baixar Currículo</a>
+                    <a id="cv-download" href="https://drive.google.com/uc?id=1uPq8AwV3dzo9cfgR_OIHUaJqmHjdL296&export=download"
+                       download="https://drive.google.com/uc?id=1uPq8AwV3dzo9cfgR_OIHUaJqmHjdL296&export=download"
+                       class="btn" style="margin: 0 auto; width: 100%">Baixar Currículo</a>
+                    <a id="resume-download" href="https://drive.google.com/uc?id=1Sh3Fwz3vrRxzBq_t1MdPVnfJXUrUeXij&export=download"
+                       download="https://drive.google.com/uc?id=1Sh3Fwz3vrRxzBq_t1MdPVnfJXUrUeXij&export=download" hidden
+                       class="btn" style="margin: 0 auto; width: 100%">Resume Download</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-8">
             <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="title pb-3 mb-5">Sobre Mim</h1>
-                <p>Sou desenvolvedor Full Stack PHP e apaixonado por tecnologia.
+                <h1 class="title pb-3 mb-5" translate="about_me_title">Sobre Mim</h1>
+                <p translate="about_me_text">Sou desenvolvedor Full Stack PHP e apaixonado por tecnologia.
                     Possuo facilidade em aprender, me comunicar, trabalhar em equipe,
                     fornecer suporte ao cliente, programar e desenvolver softwares e sistemas,
                     analisar e resolver problemas e sou curioso em adquirir novos conhecimentos.</p>
                 <div class="row mb-4">
                     <div class="col-sm-6 py-1">
-                        <span class="fw-medium text-primary">Nome:</span> <span id="nome"></span>
+                        <span class="fw-medium text-primary" translate="about_me_name">Nome: </span>
+                        <span id="nome"></span>
                     </div>
                     <div class="col-sm-6 py-1">
-                        <span class="fw-medium text-primary">Idade: </span><span id="idade"></span>
+                        <span class="fw-medium text-primary" translate="about_me_age">Idade: </span>
+                        <span id="idade"></span>
                     </div>
                     <div class="col-sm-6 py-1">
-                        <span class="fw-medium text-primary">Nível: </span><span id="nivel"></span>
+                        <span class="fw-medium text-primary" translate="about_me_level">Nível: </span>
+                        <span id="nivel" translate="about_me_level_value"></span>
                     </div>
                     <div class="col-sm-6 py-1">
-                        <span class="fw-medium text-primary">Experiência: </span><span id="experiencia">0</span> Anos
+                        <span class="fw-medium text-primary" translate="about_me_experience">Experiência: </span>
+                        <span id="experiencia">0</span> <span translate="about_me_experience_value">Anos</span>
                     </div>
                     <div class="col-sm-6 py-1">
-                        <span class="fw-medium text-primary">Telefone: </span><span id="telefone"></span>
+                        <span class="fw-medium text-primary" translate="about_me_phone">Telefone: </span>
+                        <span id="telefone"></span>
                     </div>
                     <div class="col-sm-6 py-1">
-                        <span class="fw-medium text-primary">Email: </span><span id="email"></span>
+                        <span class="fw-medium text-primary" translate="about_me_mail">E-mail: </span>
+                        <span id="email"></span>
                     </div>
                     <div class="col-sm-6 py-1">
                         <span class="fw-medium text-primary">LinkedIn:</span>
-                        <a href='https://www.linkedin.com/in/rafael-lopes-8a146862'
+                        <a href='https://www.linkedin.com/in/rafael-lopes-8a146862' translate="see_linkedin_perfil"
                            target='_blank' style='color: #eeeeee;border-bottom: 2px solid #00b87b;'>Visualizar
                             Perfil</a>
                     </div>
                     <div class="col-sm-6 py-1">
-                        <span class="fw-medium text-primary">Freelance: </span><span id="freelance"></span>
+                        <span class="fw-medium text-primary">Freelancer: </span><span id="freelance" translate="freelancer_status"></span>
                     </div>
                 </div>
                 <div class="row g-4">
@@ -106,8 +147,8 @@
                             <h1 class="flex-shrink-0 display-5 text-primary mb-0"
                                 data-toggle="counter-up" id="anosExperiencia"></h1>
                             <div class="ps-3">
-                                <p class="mb-0">Anos de</p>
-                                <h5 class="mb-0">Experiência</h5>
+                                <p class="mb-0" translate="years_of">Anos de</p>
+                                <h5 class="mb-0" translate="experience">Experiência</h5>
                             </div>
                         </div>
                     </div>
@@ -116,8 +157,8 @@
                             <h1 class="flex-shrink-0 display-5 text-primary mb-0"
                                 data-toggle="counter-up" id="projetosRealizados"></h1>
                             <div class="ps-3">
-                                <p class="mb-0">Projetos</p>
-                                <h5 class="mb-0">Realizados</h5>
+                                <p class="mb-0" translate="projects_released">Projetos</p>
+                                <h5 class="mb-0" translate="released_projects">Realizados</h5>
                             </div>
                         </div>
                     </div>
@@ -126,7 +167,7 @@
                             <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up"
                                 style="color: #ffffff00 !important;">&nbsp;</h1>
                             <div class="ps-3">
-                                <p class="mb-0"><b>Trabalhando em</b></p>
+                                <p class="mb-0"><b translate="working_at">Trabalhando em</b></p>
                                 <h5 class="mb-0" style="color: #00b87b;font-size: 22px;" id="trabalhandoEm"></h5>
                             </div>
                         </div>
@@ -135,21 +176,22 @@
             </section>
 
             <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="title pb-3 mb-5">Skills</h1>
+                <h1 class="title pb-3 mb-5" translate="skills_title">Habilidades</h1>
                 <div class="row" id="my-skills"></div>
             </section>
 
             <section class="py-5 wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="title pb-3 mb-5">Experiências</h1>
+                <h1 class="title pb-3 mb-5" translate="experiences_title">Experiências</h1>
                 <div class="border-start border-2 border-light pt-2 ps-5">
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <span class="badge badge-success"
+                        <span class="badge badge-success mb-2" translate="current_working_badge"
                               style="font-size: 14px;color: #fff;background-color: #00b87b;display: inline-block;padding: 0.25em 0.4em;font-weight: 700;line-height: 1;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: 0.25rem;">Trabalhando atualmente</span>
-                        <h5 class="mb-1">Desenvolvedor Full Stack - PHP</h5>
-                        <p class="mb-2">Microton | <small>2019 - Atualmente</small></p>
-                        <p>
+                        <h5 class="mb-1" translate="current_working_title">Desenvolvedor Full Stack - PHP</h5>
+                        <p class="mb-2"><b class="job-title" translate="job_title_company">Empresa: </b>Microton | <small>2019 - <span translate="current_working_small_badge">Atualmente</span></small></p>
+                        <div class="divider-company"></div>
+                        <p translate="current_working_description">
                             Desenvolvimento e análise de sistemas web utilizando tecnologias e frameworks de back-end e
                             front-end, bem como utilização de bancos de dados, criação de APIs e Webservices, planejamento,
                             estruturação de projetos e desenvolvimento de softwares; além de realizar reuniões para entendimento
@@ -165,9 +207,10 @@
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <h5 class="mb-1">Analista de negócios</h5>
-                        <p class="mb-2">Mexichem Brasil | <small>2016 - 2019</small></p>
-                        <p>
+                        <h5 class="mb-1" translate="old_job_title_1">Analista de negócios</h5>
+                        <p class="mb-2"><b class="job-title" translate="job_title_company">Empresa: </b>Mexichem <span translate="brasil_name">Brasil</span> | <small>2016 - 2019</small></p>
+                        <div class="divider-company"></div>
+                        <p translate="old_job_description_1">
                             Analisar e desenvolver melhorias de acordo com as necessidades dos usuários além,
                             de realizar consultas via banco de dados, análise de códigos fonte, criação de lógicas
                             e regras para desenvolvimentos de programas e relatórios SAP, participando de projetos,
@@ -179,22 +222,25 @@
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <h5 class="mb-1">Funcionário de suporte de TI</h5>
-                        <p class="mb-2">Tribunal Regional Federal da 4ª Região | <small>2015 - 2016</small></p>
-                        <p>
+                        <h5 class="mb-1" translate="old_job_title_2">Suporte de TI</h5>
+                        <p class="mb-2">
+                            <b class="job-title" translate="job_title_company">Empresa: </b>
+                            <span translate="old_job_brief_2">Tribunal Regional Federal da 4ª Região</span> | <small>2015 - 2016</small>
+                        </p>
+                        <div class="divider-company"></div>
+                        <p translate="old_job_description_2">
                             Estágio para Suporte de TI, na qual fornecia suporte aos usuários e realizava conserto de
-                            computadores,
-                            instalação de equipamentos e softwares do TRE (Tribunal Regional Eleitoral). Também configurava
-                            máquinas
-                            de fotografia, aparelhos de impressão e captação de digitais e impressoras.
+                            computadores, instalação de equipamentos e softwares do TRE (Tribunal Regional Eleitoral). Também configurava
+                            máquinas de fotografia, aparelhos de impressão e captação de digitais e impressoras.
                         </p>
                     </div>
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <h5 class="mb-1">Menor Aprendiz - Metalúrgico</h5>
-                        <p class="mb-2">Granaço Fundição | <small>2014</small></p>
-                        <p>
+                        <h5 class="mb-1" translate="old_job_title_3">Menor Aprendiz - Metalúrgico</h5>
+                        <p class="mb-2"><b class="job-title" translate="job_title_company">Empresa: </b>Granaço Fundição | <small>2014</small></p>
+                        <div class="divider-company"></div>
+                        <p translate="old_job_description_3">
                             Menor aprendiz como Metrologista e laboratorista metalúrgico, além de realizar atualizações em
                             planilhas de
                             controle, medições de peças, dentre outras atividades pertinentes as funções que me foram
@@ -210,11 +256,14 @@
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <h5 class="mb-1">Desenvolvedor Full Stack</h5>
-                        <p class="mb-2">DogTagClan | <small>2018 - Atualmente</small></p>
+                        <h5 class="mb-1" translate="freelancer_job_title_1">Desenvolvedor Full Stack</h5>
+                        <p class="mb-2"><b class="job-title" translate="job_title_company">Empresa: </b>DogTagClan | <small>2018 - <span translate="current_working_small_badge">Atualmente</span></small></p>
+                        <div class="divider-company"></div>
                         <p>
-                            Desenvolvi todo o e-commerce e sistema interno de controle da
-                            <a href="https://www.dogtagclan.com.br/" target="_blank"><b>DogTagClan</b></a>, a qual
+                            <span translate="freelancer_job_description_1_part_1">Desenvolvi todo o e-commerce e sistema interno de controle da</span>
+                            <a href="https://www.dogtagclan.com.br/" target="_blank"><b>DogTagClan</b></a>,
+                            <span translate="freelancer_job_description_1_part_2">
+                            a qual
                             ainda hoje, presto suporte à empresa. Foi necessário análise e levantamento de requisitos
                             com a empresa para que fosse possível entender a necessidade e desenvolver o projeto.<br>
                             Além do desenvolvimento fiz toda a implantação e publicação na internet, desde a configuração
@@ -226,47 +275,53 @@
                             também fiz
                             todas as artes gráficas, banners, template de produtos, template de email, design, layout das
                             páginas e mais...
+                            </span>
                         </p>
                     </div>
 
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <h5 class="mb-1">Desenvolvedor Wordpress</h5>
-                        <p class="mb-2">TikiGames | <small>2022</small></p>
+                        <h5 class="mb-1" translate="freelancer_job_title_2">Desenvolvedor Wordpress</h5>
+                        <p class="mb-2"><b class="job-title" translate="job_title_company">Empresa: </b>TikiGames | <small>2022</small></p>
+                        <div class="divider-company"></div>
                         <p>
-                            Foi criado uma solução para a empresa
+                            <span translate="freelancer_job_description_2_part_1">Foi criado uma solução para a empresa</span>
                             <a href="https://www.tikigames.com.br/" target="_blank"><b>TikiGames</b></a>,
-                            publicar posts em blogs e ter no mesmo site um espaço para vendas de seus produtos. Também fiz
+                            <span translate="freelancer_job_description_2_part_2">para publicar posts em blogs e ter no mesmo site um espaço para vendas de seus produtos. Também fiz
                             toda configuração necessária no Wordpress para o funcionamento correto com a instalação de plugins e
                             módulos para que a empresa pudesse inserir e trabalhar sem a necessidade de conhecimento técnico em
-                            códigos.
+                            códigos.</span>
                         </p>
                     </div>
 
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <h5 class="mb-1">Desenvolvedor Wordpress</h5>
-                        <p class="mb-2">Nissomar | <small>2021</small></p>
+                        <h5 class="mb-1" translate="freelancer_job_title_3">Desenvolvedor Wordpress</h5>
+                        <p class="mb-2"><b class="job-title" translate="job_title_company">Empresa: </b>Nissomar | <small>2021</small></p>
+                        <div class="divider-company"></div>
                         <p>
-                            Construído todo o site para divulgação da empresa
-                            <a href="http://nissomar.com/" target="_blank"><b>Nissomar</b></a> atráves do Wordpress para
+                            <span translate="freelancer_job_description_3_part_1">Construído todo o site para divulgação da empresa</span>
+                            <a href="http://nissomar.com/" target="_blank"><b>Nissomar</b></a>
+                            <span translate="freelancer_job_description_3_part_2">atráves do Wordpress para
                             que pudessem exibir seus produtos e alcançar mais clientes atráves da internet. Inseri também
                             plugins e módulos para que a empresa pudesse inserir e trabalhar sem a necessidade de conhecimento
-                            técnico em códigos bem como atualização da versão do PHP do servidor no cliente.
+                            técnico em códigos bem como atualização da versão do PHP do servidor no cliente.</span>
                         </p>
                     </div>
 
                     <div class="position-relative mb-4">
                         <span class="bi bi-arrow-right fs-4 text-light position-absolute"
                               style="top: -5px; left: -50px;"></span>
-                        <h5 class="mb-1">Desenvolvedor de Sites</h5>
-                        <p class="mb-2">Outros clientes | <small>2018 - 2021</small></p>
+                        <h5 class="mb-1" translate="freelancer_job_title_4">Desenvolvedor de Sites</h5>
+                        <p class="mb-2"><b class="job-title" translate="job_title_company">Empresa: </b><span translate="freelancer_job_brief_4">Outros clientes</span> | <small>2018 - 2021</small></p>
+                        <div class="divider-company"></div>
                         <p>
-                            Fiz alguns sites para pequenas e micro empresas que tinha o objetivo de apenas listar e exibir
-                            seu negócio na internet para publicar nas redes sociais, são elas:
-                            <b>Khaloka, Excellence Montagens, Pão da Vida, PDK</b> e outros...
+                            <span translate="freelancer_job_description_4_part_1">Fiz alguns sites para pequenas e micro empresas que tinha o objetivo de apenas listar e exibir
+                            seu negócio na internet para publicar nas redes sociais, são elas:</span>
+                            <b>Khaloka, Excellence Montagens, Lia Bela Art, Pão da Vida, PDK</b>
+                            <span translate="freelancer_job_description_4_part_2">e outros...</span>
                         </p>
                     </div>
                 </div>
@@ -274,75 +329,77 @@
 
             <section class="wow fadeInUp" data-wow-delay="0.1s">
                 <div class="bg-secondary text-center p-3">
-                    <h1 class="text-white font-weight-bold">Idiomas</h1>
+                    <h1 class="text-white font-weight-bold" translate="language_title">Idiomas</h1>
                     <div class="position-relative w-100 table-responsive" style="text-align: left">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">Idioma</th>
-                                <th scope="col">Comunição</th>
-                                <th scope="col">Leitura</th>
-                                <th scope="col">Escrita</th>
+                                <th scope="col" translate="language_header_lang">Idioma</th>
+                                <th scope="col" translate="language_header_communicate">Comunição</th>
+                                <th scope="col" translate="language_header_reading">Leitura</th>
+                                <th scope="col" translate="language_header_writing">Escrita</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <th scope="row">Português Brasileiro</th>
-                                <td>Nativo</td>
-                                <td>Nativo</td>
-                                <td>Nativo</td>
+                                <th scope="row" translate="language_data_lang_1">Português Brasileiro</th>
+                                <td translate="language_data_communicate_1">Nativo</td>
+                                <td translate="language_data_reading_1">Nativo</td>
+                                <td translate="language_data_writing_1">Nativo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Inglês</th>
-                                <td>Intermediário</td>
-                                <td>Avançado</td>
-                                <td>Intermediário</td>
+                                <th scope="row" translate="language_data_lang_2">Inglês</th>
+                                <td translate="language_data_communicate_2">Intermediário</td>
+                                <td translate="language_data_reading_2">Avançado</td>
+                                <td translate="language_data_writing_2">Intermediário</td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="ajuda-rapida alert alert-info" style="padding: 0 5px 0 5px" role="alert">
-                        Arraste a tabela à <a class="alert-link">esquerda</a>.
+                        <span translate="msg_drag_table_1">Arraste a tabela à </span>
+                        <a class="alert-link"><span translate="msg_drag_table_2">esquerda</span></a>.
                     </div>
                 </div>
             </section>
 
             <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="title pb-3 mb-5">Conhecimentos</h1>
+                <h1 class="title pb-3 mb-5" translate="knowledge_title">Conhecimentos</h1>
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="service-item">
                             <i class="fa fa-2x fa-laptop-code mx-auto mb-4"></i>
-                            <h5 class="mb-2">Linguagens</h5>
+                            <h5 class="mb-2" translate="knowledge_sub_title_1">Linguagens</h5>
                             <p class="mb-0">PHP, JavaScript, HTML, CSS, C++</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="service-item">
                             <i class="fa fa-2x fa-database mx-auto mb-4"></i>
-                            <h5 class="mb-2">Banco de Dados</h5>
-                            <p class="mb-0">MySQL, Postgres, Oracle, SQL Server</p>
+                            <h5 class="mb-2" translate="knowledge_sub_title_2">Banco de Dados</h5>
+                            <p class="mb-0">MySQL, PostgreSQL, Oracle, SQL Server</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="service-item">
                             <i class="fa fa-2x fa-link mx-auto mb-4"></i>
-                            <h5 class="mb-2">Frameworks e APIs</h5>
+                            <h5 class="mb-2" translate="knowledge_sub_title_3">Frameworks e APIs</h5>
                             <p class="mb-0">Laravel, Slim, Doctrine, Eloquent, PHPUnit
                                 ChartJs, OpenLayers, Composer, Opencart, Wordpress,
-                                APIs de pagamento e rastreamento por CEP e muitas outras...</p>
+                                <span translate="knowledge_desc_2_part_1">APIs de pagamento e rastreamento por CEP e muitas outras...</span>
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="service-item">
                             <i class="fa fa-2x fa-plus mx-auto mb-4"></i>
-                            <h5 class="mb-2">Diferencial</h5>
+                            <h5 class="mb-2" translate="knowledge_sub_title_4">Diferencial</h5>
                             <p class="mb-0">
                                 Photoshop, Sony Vegas, SAP, Softway, OpenLayers,
-                                Kodular, aplicações utilizando PWA e possuo meu próprio
-                                site (<a href="https://www.ampliesolucoes.com.br/" target="_blank"><b>Amplie Soluções</b></a>)
-                                para realizações de freelancers - <a href="https://www.ampliesolucoes.com.br/"
-                                                                     target="_blank"><b>Ver Site</b></a>.
+                                Kodular, <span translate="knowledge_desc_4_part_1">aplicações utilizando PWA e possuo meu próprio site</span>
+                                 (<a href="https://www.ampliesolucoes.com.br/" target="_blank"><b>Amplie Soluções</b></a>)
+                                <span translate="knowledge_desc_4_part_2">para realizações de freelancers</span>
+                                - <a href="https://www.ampliesolucoes.com.br/" target="_blank"><b translate="knowledge_desc_4_part_3">Ver Site</b></a>.
                             </p>
                         </div>
                     </div>
@@ -350,31 +407,31 @@
             </section>
 
             <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="title pb-3 mb-5">Educação e Certificados</h1>
-                <p>
+                <h1 class="title pb-3 mb-5" translate="achievements_title">Educação e Certificados</h1>
+                <p translate="achievements_brief">
                     Sou formado pela Universidade da Região de Joinville UNIVILLE / SC como Bacharel em Sistemas de Informação
                 </p>
                 <div class="bg-secondary p-1">
-                    <h3 class="text-primary font-weight-bold">Educação</h3>
+                    <h3 class="text-primary font-weight-bold" translate="education_table_title">Educação</h3>
                     <div class="position-relative w-100 table-responsive" style="text-align: left">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">Tipo</th>
-                                <th scope="col">Grau</th>
-                                <th scope="col">Status</th>
+                                <th scope="col" translate="education_table_header_type">Tipo</th>
+                                <th scope="col" translate="education_table_header_degree">Grau</th>
+                                <th scope="col" translate="education_table_header_status">Status</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <th scope="row">Educação Básica</th>
-                                <td>Ensino Médio</td>
-                                <td>Completo</td>
+                                <th scope="row" translate="education_table_data_1">Educação Básica</th>
+                                <td translate="education_table_data_2">Ensino Médio</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Ensino Superior</th>
-                                <td>Bacharel em Sistemas de Informação</td>
-                                <td>Completo</td>
+                                <th scope="row" translate="education_table_data_4">Ensino Superior</th>
+                                <td translate="education_table_data_5">Bacharel em Sistemas de Informação</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             </tbody>
                         </table>
@@ -382,57 +439,56 @@
                 </div>
 
                 <div class="bg-secondary p-1">
-                    <h3 class="text-primary font-weight-bold">Certificados</h3>
+                    <h3 class="text-primary font-weight-bold" translate="certificates_table_title">Certificados</h3>
                     <div class="position-relative w-100 table-responsive" style="text-align: left">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">Curso</th>
-                                <th scope="col">Instituição</th>
-                                <th scope="col">Status</th>
-
+                                <th scope="col" translate="certificates_table_header_course">Curso</th>
+                                <th scope="col" translate="certificates_table_header_institution">Instituição</th>
+                                <th scope="col" translate="certificates_table_header_status">Status</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <th scope="row">Desafio de Habilidades em IA - Microsoft</th>
+                                <th scope="row" translate="certificates_table_data_1">Desafio de Habilidades em IA - Microsoft</th>
                                 <td>Microsoft</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Certificado Microsoft 70-480</th>
+                                <th scope="row" translate="certificates_table_data_2">Certificado Microsoft 70-480</th>
                                 <td>Microsoft</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Desenvolvimento WEB</th>
+                                <th scope="row" translate="certificates_table_data_3">Desenvolvimento WEB</th>
                                 <td>Udemy</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Certificado de introdução ao JAVA</th>
+                                <th scope="row" translate="certificates_table_data_4">Certificado de introdução ao JAVA</th>
                                 <td>Udemy</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Certificado de Inglês</th>
+                                <th scope="row" translate="certificates_table_data_5">Certificado de Inglês</th>
                                 <td>OK Idiomas</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Certificado de Código de Ética</th>
+                                <th scope="row" translate="certificates_table_data_6">Certificado de Código de Ética</th>
                                 <td>SENAI</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Segurança do Trabalho</th>
+                                <th scope="row" translate="certificates_table_data_7">Segurança do Trabalho</th>
                                 <td>SENAI</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             <tr>
-                                <th scope="row">Qualidade em Metalurgia</th>
+                                <th scope="row" translate="certificates_table_data_8">Qualidade em Metalurgia</th>
                                 <td>SENAI</td>
-                                <td>Completo</td>
+                                <td translate="table_status_complete">Completo</td>
                             </tr>
                             </tbody>
                         </table>
@@ -442,20 +498,20 @@
             </section>
 
             <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="title pb-3 mb-5">Meus Projetos</h1>
-                <p>Apresento a seguir alguns dos projetos que desenvolvi em freelances ou projetos pessoais.<br>
-                    <small>(Projetos de empresas em que trabalho/trabalhei <b>(principalmente sistemas)</b> não serão exibidas
-                        por questões de integridade e confidencialidade)</small></p>
+                <h1 class="title pb-3 mb-5" translate="projects_title">Meus Projetos</h1>
+                <p><span translate="projects_brief_1">Apresento a seguir alguns dos projetos que desenvolvi em freelances ou projetos pessoais.</span><br>
+                    <small>(<span translate="projects_brief_2">Projetos de empresas em que trabalho/trabalhei</span>
+                        <b translate="projects_brief_3">(principalmente sistemas)</b>  <span translate="projects_brief_4">não serão exibidas por questões de integridade e confidencialidade</span>)</small></p>
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
                             <div class="col-12 text-center mb-2">
                                 <ul class="list-inline mb-4" id="portfolio-flters">
-                                    <li class="btn btn-secondary active" data-filter="*"><i class="fa fa-star me-2"></i>Tudo</li>
-                                    <li class="btn btn-secondary" data-filter=".first"><i class="fa fa-laptop-code me-2"></i>Sistemas</li>
-                                    <li class="btn btn-secondary" data-filter=".second"><i class="fa fa-globe me-2"></i>Sites</li>
-                                    <li class="btn btn-secondary" data-filter=".third"><i class="fa fa-globe me-2"></i>E-commerces</li>
-                                    <li class="btn btn-secondary" data-filter=".fourth"><i class="fa fa-code me-2"></i>Outros</li>
+                                    <li class="btn btn-secondary active" data-filter="*"><i class="fa fa-star me-2"></i><span translate="projects_button_1">Tudo</span></li>
+                                    <li class="btn btn-secondary" data-filter=".first"><i class="fa fa-laptop-code me-2"></i><span translate="projects_button_2">Sistemas</span></li>
+                                    <li class="btn btn-secondary" data-filter=".second"><i class="fa fa-globe me-2"></i><span translate="projects_button_3">Sites</span></li>
+                                    <li class="btn btn-secondary" data-filter=".third"><i class="fa fa-globe me-2"></i><span translate="projects_button_4">E-commerces</span></li>
+                                    <li class="btn btn-secondary" data-filter=".fourth"><i class="fa fa-code me-2"></i><span translate="projects_button_5">Outros</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -594,12 +650,14 @@
             </section>
 
             <section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
-                <h1 class="title pb-3 mb-5">Entre em Contato</h1>
-                <p class="mb-4">Você pode entrar em contato comigo através do meu LinkedIn clicando no botão a seguir
-                    <b>Entrar em Contato</b>!</p>
+                <h1 class="title pb-3 mb-5" translate="contact_me_title">Entre em Contato</h1>
+                <p class="mb-4">
+                    <span translate="contact_me_part_1">Você pode entrar em contato comigo através do meu LinkedIn clicando no botão a seguir</span>
+                    <b translate="contact_me_part_2">Entrar em Contato</b>!
+                </p>
                 <div class="col-12">
                     <a class="btn btn-primary w-100 py-3" href="https://www.linkedin.com/in/rafael-lopes-8a146862"
-                       target="_blank">Entrar em Contato</a>
+                       target="_blank" translate="contact_button">Entrar em Contato</a>
                 </div>
             </section>
         </div>
@@ -619,5 +677,6 @@
 <script src="dependencies/lib/lightbox/js/lightbox.min.js"></script>
 <script src="dependencies/js/main.js"></script>
 <script src="dependencies/js/my-settings.js"></script>
+<script src="dependencies/js/language.js"></script>
 </body>
 </html>

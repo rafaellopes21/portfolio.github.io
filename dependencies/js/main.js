@@ -1,40 +1,14 @@
 (function ($) {
     "use strict";
 
-    // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        }, 1);
-    };
-    spinner();
-    
-    
     // Initiate the wowjs
     new WOW().init();
-
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
-
-
-    // Typed Initiate
-    if ($('.typed-text-output').length == 1) {
-        var typed_strings = $('.typed-text').text();
-        var typed = new Typed('.typed-text-output', {
-            strings: typed_strings.split(', '),
-            typeSpeed: 100,
-            backSpeed: 20,
-            smartBackspace: false,
-            loop: true
-        });
-    }
-
 
     // Smooth scrolling to section
     $(".btn-scroll").on('click', function (event) {
@@ -93,3 +67,48 @@
     });
 })(jQuery);
 
+// Typed Initiate
+function typedTextAnimated(){
+    if ($('.typed-text-output').length == 1) {
+        let typed_strings = $('.typed-text').text();
+        let typed = new Typed('.typed-text-output', {
+            strings: typed_strings.split(', '),
+            typeSpeed: 100,
+            backSpeed: 20,
+            smartBackspace: false,
+            loop: true
+        });
+    }
+}
+
+// Spinner
+function spinner(removeBlur = false) {
+    setTimeout(function () {
+        if ($('#spinner').length > 0) {
+            $('#spinner').removeClass('show');
+        }
+        if(removeBlur){
+            document.querySelector(".main-content-portfolio").classList.remove('blur-content');
+        }
+    }, 100);
+}
+
+function setResumeDownload(lang){
+    let downloadPt = document.querySelector("#cv-download");
+    let downloadEn = document.querySelector("#resume-download");
+    if(lang == 'en'){
+        downloadPt.setAttribute("hidden", "hidden");
+        downloadEn.removeAttribute("hidden");
+    }
+    if(lang == 'pt'){
+        downloadEn.setAttribute("hidden", "hidden");
+        downloadPt.removeAttribute("hidden");
+    }
+}
+
+//Start portfolio
+function releasePortfolio(lang){
+    typedTextAnimated();
+    setResumeDownload(lang);
+    spinner(true);
+}

@@ -215,3 +215,64 @@
 .testimonial-carousel .owl-dot.active {
   background: var(--primary);
 }
+.job-title{
+  color: var(--primary);
+}
+.divider-company{
+  position: relative;
+  left: 8px;
+  width: 20px;
+  height: 0.2px;
+  border-radius: 50px;
+  background: white;
+  margin-bottom: 7px;
+}
+
+.blur-content{
+  filter: blur(20px);
+}
+
+.modal-lang{
+  background: #2C3E50 !important;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+.btn-lang, .btn-lang > img{
+  border-radius: 50px;
+}
+.btn-lang > img{
+  max-width: 120px;
+}
+.btn-lang{
+  background: var(--primary);
+  padding: 5px;
+}
+.btn-lang:hover{
+  background: var(--light);
+  transform: scale(1.2, 1.2);
+}
+
+.btn-img{
+  max-width: 37px;
+  position: relative;
+  top: -4px;
+  border-radius: 50px;
+  height: 80%;
+  object-fit: cover;
+  object-position: 50%;
+  transform: scale(0.8) translate(0, 8%);
+  cursor: pointer;
+}
+.btn-img:hover{
+  border: 2px solid white;
+  transform: scale(.9, .9);
+}
+
+@media (max-width: 575px) {
+  section div.border-light > div{
+    margin-left: -23px;
+  }
+  section div.border-light > div span.bi-arrow-right:before{
+    margin-left: 23px;
+  }
+}

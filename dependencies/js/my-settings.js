@@ -10,24 +10,43 @@ $(document).ready(function() {
     setInElement('#trabalhandoEm', "Microton");
     setInElement('#projetosRealizados', 21);
     setMySkills([
-        {nome: 'PHP', percentual: 95},
-        {nome: 'HTML', percentual: 80},
-        {nome: 'JavaScript', percentual: 85},
-        {nome: 'CSS', percentual: 70},
-        {nome: 'SEO', percentual: 85},
-        {nome: 'GitHub', percentual: 80},
-        {nome: 'OpenCart', percentual: 80},
-        {nome: 'WordPress', percentual: 75},
-        {nome: 'Banco de Dados', percentual: 75},
-        {nome: 'Linux', percentual: 40},
-        {nome: 'Photoshop', percentual: 75},
-        {nome: 'Sony Vegas', percentual: 80},
-        {nome: 'Pacote Office', percentual: 85},
+        {nome: 'PHP', percentual: 95, translate: 'skill_php'},
+        {nome: 'HTML', percentual: 90, translate: 'skill_html'},
+        {nome: 'JavaScript', percentual: 90, translate: 'skill_js'},
+        {nome: 'CSS', percentual: 75, translate: 'skill_css'},
+        {nome: 'SEO', percentual: 90, translate: 'skill_seo'},
+        {nome: 'GitHub', percentual: 85, translate: 'skill_githug'},
+        {nome: 'OpenCart', percentual: 70, translate: 'skill_opencart'},
+        {nome: 'WordPress', percentual: 75, translate: 'skill_wordpress'},
+        {nome: 'Banco de Dados', percentual: 80, translate: 'skill_database'},
+        {nome: 'Linux', percentual: 40, translate: 'skill_linux'},
+        {nome: 'Photoshop', percentual: 70, translate: 'skill_photoshop'},
+        {nome: 'Sony Vegas', percentual: 75, translate: 'skill_sony_vegas'},
+        {nome: 'Pacote Office', percentual: 85, translate: 'skill_office_package'},
     ]);
 });
 
 function setInElement(selector, value){
-    document.querySelector(selector).innerText = value;
+    let setIn= document.querySelector(selector);
+
+    if(selector == '#telefone' && localStorage.getItem('portfolioLanguage') && localStorage.getItem('portfolioLanguage') != "pt"){
+        value = "+55 "+value;
+    }
+    setIn.innerText = hasTraslation(setIn, value);
+}
+
+function hasTraslation(setIn, value, ignoreElement = false){
+    let storageItem = localStorage.getItem('portfolioLanguage');
+    if(storageItem && storageItem != "pt"){
+        if(ignoreElement){
+            value = t(setIn) || value;
+        } else {
+            if(setIn.getAttribute("translate")){
+                value = t(setIn.getAttribute("translate")) || value;
+            }
+        }
+    }
+    return value;
 }
 
 function setMySkills(skillsInArray){
@@ -51,6 +70,8 @@ function setMySkills(skillsInArray){
             counter = -1;
         }
         counter++;
+
+        skill['nome'] = hasTraslation(skill['translate'], skill['nome'], true);
         document.querySelector("#my-skills").insertAdjacentHTML("beforeend",
             '<div class="col-sm-6">\n' +
             '         <div class="skill mb-4">\n' +
